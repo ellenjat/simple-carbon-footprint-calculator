@@ -1,0 +1,98 @@
+﻿carbonDict = {"car": 0.29,
+              "smartphone": 3.42,
+              "TV": 0.42,
+              "lights": 0.07,
+              "meat": 4.00,
+              "recycle":-0.50 ,
+              "vehicle share": 0.24,
+  
+}
+
+
+carbonTotal = 0;
+
+
+print("Welcome to the Carbon calculator!")
+
+
+carRide = input("Did you ride in a car today? Y or N ")
+
+
+if carRide.upper() == "N":
+  print("Total carbon: " + str(carbonTotal))
+elif carRide.upper() == "Y":
+  miles=int(input("For how many miles?"))
+  carbonTotal += carbonDict["car"]*miles
+  print("Total carbon: " + str(carbonTotal))
+  
+phone = input("Did you use a phone today? Y or N ")
+
+
+if phone.upper() == "N":
+  print("Total carbon: "+ str(carbonTotal))
+  pass
+elif phone.upper() == "Y":
+  hours = float(input("For how many hours?"))
+  carbonTotal += carbonDict["smartphone"] * hours
+  print("Total carbon: " + str(carbonTotal))
+  
+TV = input("Did you use a computer, play videogames, and/or watch TV today? Y or N ")
+
+
+if TV.upper() == "N":
+  print("Total carbon: " + str(carbonTotal))
+  pass
+elif TV.upper() == "Y":
+  hours = float(input("For how many hours?"))
+  carbonTotal += carbonDict["TV"] * hours
+  print("Total carbon: " + str(carbonTotal))
+  
+lights = input("Did you turn the lights off when you left every room?  Y or N.")
+
+
+if lights.upper() == "N":
+  print("Total carbon: " + str(carbonTotal))
+  pass
+elif lights.upper() == "Y":
+  hours = float(input("For how many hours?"))
+  carbonTotal -= carbonDict["lights"] * hours
+  print("Total carbon: " + str(carbonTotal))
+
+
+meat = input("Did you eat meat today? Y or N ")
+
+
+if meat.upper() == "N":
+  print("Total carbon: " + str(carbonTotal))
+  pass
+elif meat.upper() == "Y":
+  servings = float(input("how many servings?"))
+  carbonTotal += carbonDict["meat"] * servings
+  print("Total carbon: " + str(carbonTotal))
+  
+recycle = input("Did you recycle today?  Y or N ")
+
+
+if recycle.upper() == "N":
+  print("Total carbon: " + str(carbonTotal))
+  pass
+elif recycle.upper() == "Y":
+  hours = float(input("how many times?"))
+  carbonTotal += carbonDict["recycle"] * hours
+  print("Total carbon: " + str(carbonTotal))
+  
+vehicle_share = input("Did you take public transportation or carpool today? Y or N ")
+
+
+if vehicle_share.upper() == "N":
+  print("Total carbon: " + str(carbonTotal))
+  pass
+elif vehicle_share.upper() == "Y":
+  hours = float(input("how many hours?"))
+  carbonTotal += carbonDict["vehicle share"] * hours
+  print("Total carbon: " + str(carbonTotal))
+  
+print("Congrats today your carbon footprint is: " + str(carbonTotal) + "kg/mi CO2 \n" +"This is equivalent to having a carbon footprint of: " + str(carbonTotal*365)+
+
+
+"kg/mi CO2 per year.")
